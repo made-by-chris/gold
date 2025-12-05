@@ -1,8 +1,23 @@
 {
+  "name": "gold-price-scraper",
+  "version": "1.0.0",
+  "description": "Automated gold price scraper with OCR and database storage",
+  "type": "module",
+  "main": "run-all.js",
+  "scripts": {
+    "start": "node run-all.js",
+    "scrape": "node scrape.js",
+    "ocr": "node ocr.js",
+    "extract": "node extract.js",
+    "push": "node push-to-neon.js"
+  },
   "dependencies": {
     "dotenv": "^17.2.3",
     "openai": "^6.10.0",
     "pg": "^8.16.3",
     "puppeteer": "^24.32.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
