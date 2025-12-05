@@ -26,9 +26,17 @@ async function run() {
         fs.mkdirSync("outputs/screenshots", { recursive: true });
 
     const browser = await puppeteer.launch({
-        headless: true,  
-        defaultViewport: null
+        headless: true,
+        defaultViewport: null,
+        executablePath: '/usr/bin/chromium-browser',
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu'
+        ]
     });
+    
 
     const page = await browser.newPage();
 
